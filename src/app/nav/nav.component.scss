@@ -1,0 +1,39 @@
+header {
+  background-color: white;
+  a {
+    img {
+      width: 150px;
+      padding: .3rem 0;
+    }
+  }
+  nav {
+    justify-self: right;
+    padding: 0.8rem;
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      li {
+        float: left;
+        a {
+          font-family: 'Segoe Print';
+          padding: 1.8em;
+          text-transform: uppercase;
+          font-size: 0.9rem;
+          font-weight: bold;
+          color: #707070;
+
+          &:hover {
+            color: #20d4d9;
+          }
+        }
+      }
+    }
+  }
+}
+
+.one-edge-shadow {
+  -webkit-box-shadow: 0 3px 1px 0px rgb(148, 146, 146);
+  -moz-box-shadow: 0 3px 1px 0px rgb(148, 146, 146);
+  box-shadow: 0 3px 1px 0px rgb(148, 146, 146);
+}
