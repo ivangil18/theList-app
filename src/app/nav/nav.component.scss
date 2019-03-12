@@ -26,11 +26,19 @@ header {
           &:hover {
             color: #20d4d9;
           }
+
+          &.running {
+            color: #20D4D9;
+          }
+
+
         }
       }
     }
+
   }
 }
+
 
 .one-edge-shadow {
   -webkit-box-shadow: 0 3px 1px 0px rgb(148, 146, 146);

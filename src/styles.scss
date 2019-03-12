@@ -30,23 +30,17 @@ section {
 }
 
 .btn {
-  display: grid;
-  grid-template-columns: 30% auto;
-  width: 550px;
+  width: 150px;
+  background-color: #19bf41;
+  padding: 0.8rem;
+  border-radius: 5px;
+  text-align: center;
 
   a {
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
     color: white;
-    background-color: #19bf41;
-    padding: 0.8rem;
-    border-radius: 5px;
-    width: 100%;
 
-    &:hover {
-      background-color: #1edb4a;
-      cursor: pointer;
-    }
   }
 
   img {
@@ -54,5 +48,11 @@ section {
     margin: 0 0.5rem;
     width: 18px;
   }
+  &:hover {
+    background-color: #1edb4a;
+    cursor: pointer;
+  }
 }
+
+
 

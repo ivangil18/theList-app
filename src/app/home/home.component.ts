@@ -6,10 +6,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  totalStudents = 2;
 
-  constructor() { }
+  studentsRegistered = false;
 
-  ngOnInit() {
+  constructor() {}
+
+  ngOnInit() {}
+
+  onAddStudent() {
+    this.totalStudents += 1;
+    this.studentsRegistered = true;
+    console.log(this.totalStudents);
+
   }
-
 }

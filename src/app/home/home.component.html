@@ -1,12 +1,33 @@
 <div class="welcome">
   <div>
     <h1>Welcome to theList!</h1>
-    <p>No students registered yet...</p>
-    <div class="btn">
+    <div *ngIf="studentsRegistered; then ptrue; else pfalse"></div>
+    <ng-template #ptrue
+      ><div *ngIf="totalStudents === 1; then lessthan10; else morethan10"></div>
+      <div class="btn">
+        <a routerLink="/list" role="button">Take Atendace</a>
+      </div>
+    </ng-template>
+    <ng-template #lessthan10
+      ><p>There is {{ totalStudents }} student registered!</p></ng-template
+    >
+    <ng-template #morethan10
+      ><p>There are {{ totalStudents }} students registered!</p>
+    </ng-template>
+    <ng-template #pfalse>
+      <p>No students registered yet...</p>
+      <div class="btn">
+        <a (click)="onAddStudent()" role="button"
+          ><img src="assets/plus.svg" /> Add Student</a
+        >
+      </div>
+    </ng-template>
+
+    <!-- <div class="btn">
       <a routerLink="/student" role="button"
-        ><img src="assets/plus.svg" /> ADD STUDENT</a
+        ><img src="assets/plus.svg" /> Add Student</a
       >
-    </div>
+    </div> -->
   </div>
 
   <img class="bigLogo" src="assets/bigLogo.svg" />
