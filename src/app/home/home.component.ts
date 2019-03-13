@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { StudentDataService } from '../shared/student-data.service';
 
 @Component({
   selector: 'app-home',
@@ -6,18 +7,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  totalStudents = 2;
-
+  totalStudents: number;
   studentsRegistered = false;
 
-  constructor() {}
+  constructor(private studentDataService: StudentDataService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.onStudentAdded();
+  }
 
-  onAddStudent() {
-    this.totalStudents += 1;
-    this.studentsRegistered = true;
-    console.log(this.totalStudents);
-
+  onStudentAdded() {
+    this.totalStudents = this.studentDataService.getStudents().length;
+    if (this.totalStudents > 0) {
+      this.studentsRegistered = true;
+    }
   }
 }
