@@ -1,32 +1,33 @@
 <div class="data">
+  <h1>Student Data:</h1>
   <form [formGroup]="studentForm">
-    <div>
+    <div class="formControl">
       <label for="name">Name:</label>
       <input type="text" formControlName="name" />
     </div>
-    <div>
+    <div class="formControl">
       <label for="lastName">Last Name:</label>
       <input type="text" formControlName="lastName" />
     </div>
-    <div>
+    <div class="formControl">
       <label for="group">Class:</label>
       <input type="text" formControlName="group" />
     </div>
-    <div>
+    <div class="formControl">
       <label for="city">City:</label>
       <input type="text" formControlName="city" />
     </div>
-    <div>
+    <div class="formControl">
       <label for="country">Country:</label>
       <input type="text" formControlName="country" />
     </div>
-    <div>
+    <div class="formControl">
       <label for="email">Email:</label>
       <input type="email" formControlName="email" />
     </div>
-    <div>
-      <button type="button" (click)="onSave()">Save</button>
-      <button type="button" (click)="onSave()">Cancel</button>
+    <div class="buton">
+      <button class="bttn btnSuccess" type="button" (click)="onSave()">Save</button>
+      <button class="bttn btnDanger" type="button" (click)="onSave()">Cancel</button>
     </div>
   </form>
 </div>
