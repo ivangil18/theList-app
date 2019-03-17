@@ -1,61 +1,86 @@
 .data {
-  margin: 3em 16rem 0 0;
-  padding: 1.8rem;
+  margin: 0;
   width: 500px;
-  border: solid 1px black;
-  border-radius: 5px;
 
-  h1 {
-    margin: .3rem;
+  border-radius: 5px;
+  background-color: white;
+
+  header {
+    background-color: rgb(17, 17, 104);
+    margin: 0;
+    padding: .9rem;
+     h1 {
+      margin: 0.3rem;
+      color: white;
+    }
   }
 
-  .buton {
-    margin-top: 0.5rem;
-    text-align: right;
-
-    .bttn {
-      width: 150px;
-      border: 0;
-      padding: 0.6rem;
-      border-radius: 5px;
-      color: white;
-      font-weight: bold;
-      margin: 0.6rem;
-      font-size: 0.9rem;
+  .dataInputs {
+    padding: 1.8rem;
+    input {
+      font-size: 1.2rem;
     }
 
-    .btnSuccess {
-      background: #19bf41;
+    .buton {
+      margin-top: 0.5rem;
+      text-align: right;
+      font-family: 'Monserrat';
 
-      &:hover{
-        color: #15752c;
+      .bttn {
+        width: 150px;
+        border: 0;
+        padding: 0.6rem;
+        border-radius: 5px;
+        color: white;
+        font-weight: bold;
+        margin: 0.6rem;
+        font-size: 1.1rem;
+      }
+
+      .btnSuccess {
+        background: #19bf41;
+
+        &:hover {
+          background: #15752c;
+          cursor: pointer;
+        }
+      }
+
+      .btnDanger {
+        border: 0;
+        background: #bf1919;
+      }
+
+      &:hover {
+        cursor: pointer;
       }
     }
+  }
 
+  .atendance{
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+  }
 
+  .formControl {
+    display: grid;
+    padding: .3rem;
 
-    .btnDanger {
-      border: 0;
-      background: #bf1919;
+    label {
+      font-weight: bold;
+      margin: 0 0.6rem;
+      font-size: 0.9rem;
+    }
+    input {
+      width: 100%;
+      height: 30px;
+      border: solid 1px rgb(141, 140, 140);
+      border-radius: 5px;
+      margin: 0.3rem;
     }
 
-    &:hover{
-      cursor: pointer;
+    .numb{
+      width: 80px;
     }
-  }
-}
-
-.formControl {
-  label {
-    font-weight: bold;
-    margin: 0.6rem;
-    font-size: 0.9rem;
-  }
-  input {
-    width: 300px;
-    height: 30px;
-    border: solid 1px rgb(141, 140, 140);
-    border-radius: 5px;
-    margin: 0.6rem;
   }
 }

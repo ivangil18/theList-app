@@ -1,33 +1,55 @@
 <div class="data">
-  <h1>Student Data:</h1>
-  <form [formGroup]="studentForm">
-    <div class="formControl">
-      <label for="name">Name:</label>
-      <input type="text" formControlName="name" />
-    </div>
-    <div class="formControl">
-      <label for="lastName">Last Name:</label>
-      <input type="text" formControlName="lastName" />
-    </div>
-    <div class="formControl">
-      <label for="group">Class:</label>
-      <input type="text" formControlName="group" />
-    </div>
-    <div class="formControl">
-      <label for="city">City:</label>
-      <input type="text" formControlName="city" />
-    </div>
-    <div class="formControl">
-      <label for="country">Country:</label>
-      <input type="text" formControlName="country" />
-    </div>
-    <div class="formControl">
-      <label for="email">Email:</label>
-      <input type="email" formControlName="email" />
-    </div>
-    <div class="buton">
-      <button class="bttn btnSuccess" type="button" (click)="onSave()">Save</button>
-      <button class="bttn btnDanger" type="button" (click)="onSave()">Cancel</button>
-    </div>
-  </form>
+  <header>
+    <h1>Student Data:</h1>
+  </header>
+  <div class="dataInputs">
+    <form [formGroup]="studentForm">
+      <div class="formControl">
+        <label for="name">Name:</label>
+        <input type="text" formControlName="name" />
+      </div>
+      <div class="formControl">
+        <label for="lastName">Last Name:</label>
+        <input type="text" formControlName="lastName" />
+      </div>
+      <div class="formControl">
+        <label for="group">Class:</label>
+        <input type="text" formControlName="group" />
+      </div>
+      <div class="formControl">
+        <label for="major">Major:</label>
+        <input type="text" formControlName="major" />
+      </div>
+      <div class="formControl">
+        <label for="city">City:</label>
+        <input type="text" formControlName="city" />
+      </div>
+      <div class="formControl">
+        <label for="country">Country:</label>
+        <input type="text" formControlName="country" />
+      </div>
+      <div class="formControl">
+        <label for="email">Email:</label>
+        <input type="email" formControlName="email" />
+      </div>
+      <div *ngIf="editMode" class="atendance">
+        <div class="formControl">
+          <label for="present">Present:</label>
+          <input type="number" class="numb" formControlName="presents" />
+        </div>
+        <div class="formControl">
+          <label for="absent">Absents:</label>
+          <input type="number" class="numb" formControlName="absenses" />
+        </div>
+      </div>
+      <div class="buton">
+        <button class="bttn btnSuccess" type="button" (click)="onSave()">
+          Save
+        </button>
+        <button class="bttn btnDanger" type="button" (click)="onSave()">
+          Cancel
+        </button>
+      </div>
+    </form>
+  </div>
 </div>

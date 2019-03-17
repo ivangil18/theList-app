@@ -1,0 +1,111 @@
+.info {
+  width: 70%;
+  margin: 0 10rem;
+
+  h1 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: rgb(9, 9, 114);
+  }
+
+  article {
+    border: 1px solid black;
+    background-color: white;
+    border-radius: 5px;
+    padding: 0.9rem 1.8rem;
+    margin-bottom: 1.2em;
+    display: grid;
+    grid-template-columns: 50px auto 300px;
+    grid-template-areas: 'avatar data controls';
+
+    .avatar {
+      text-align: center;
+      grid-area: avatar;
+      justify-self: center;
+      width: 50px;
+      height: 50px;
+      border-radius: 50px;
+      margin: 2px 0;
+
+      p {
+        font-weight: bold;
+        color: white;
+        text-transform: uppercase;
+        font-size: 1.5rem;
+        margin: 9.5px 0;
+      }
+    }
+
+    .data {
+      grid-area: data;
+      margin: 0 1.1rem;
+
+      h3 {
+        margin: 0 0 0.2rem;
+      }
+
+      p {
+        float: left;
+        margin: 0 1.3rem 0 0;
+      }
+    }
+    .controls {
+      grid-area: controls;
+      padding: 0.4rem 0;
+      display: grid;
+      grid-template-columns: 20% 20% auto;
+
+      a {
+        list-style-type: none;
+        cursor: pointer;
+      }
+
+      .select {
+        padding: 0.4rem;
+        width: 20px;
+        height: 20px;
+        border-radius: 20px;
+        margin-top: 0.2rem;
+        cursor: pointer;
+
+
+      }
+
+      .good {
+        border: solid 1px #069e15;
+
+        &:hover{
+          background-color: #b9f7bf
+        }
+      }
+
+      .bad {
+        border: solid 1px #f11010;
+
+        &:hover{
+          background-color: #faa0a0
+        }
+      }
+
+      .btn-detail {
+        cursor: pointer;
+        border: solid 1px #4519bf;
+        padding: 0.6em 2.3em;
+        color: #4519bf;
+        // height: 34.8px;
+        text-transform: uppercase;
+        font-weight: bold;
+        border-radius: 5px;
+
+        &:hover {
+          background-color: #4519bf;
+          color: white;
+        }
+
+        &:active {
+          background-color: #321091;
+        }
+      }
+    }
+  }
+}

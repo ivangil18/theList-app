@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Student } from 'src/app/shared/student.model';
+import { StudentDataService } from 'src/app/shared/student-data.service';
 
 @Component({
   selector: 'app-detail',
@@ -6,10 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./detail.component.scss']
 })
 export class DetailComponent implements OnInit {
+  studentData: Student;
 
-  constructor() { }
+  constructor(private studanteDataService: StudentDataService) {}
 
   ngOnInit() {
+    this.studanteDataService.studentSelected.subscribe(student => {
+      this.studentData = student;
+    });
   }
-
 }

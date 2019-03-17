@@ -1,3 +1,32 @@
-<p>
-  item works!
-</p>
+<div class="info">
+  <h1>Students List:</h1>
+  <div class="list">
+    <article *ngFor="let student of students; let i = index">
+      <div class="avatar" [ngStyle]="{ 'background-color': student.avatar }">
+        <p>{{ getinitials(student.name, student.lastName) }}</p>
+      </div>
+      <div class="data">
+        <h3>{{ student.name }} {{ student.lastName }}</h3>
+        <p>Class: {{ student.group }}</p>
+        <p>#: {{ i + 1 }}</p>
+      </div>
+      <div class="controls">
+        <a (click)="onPresent(i)"
+          ><img src="assets/good.svg" class="select good"
+        /></a>
+        <a (click)="onAbsent(i)"
+          ><img src="assets/bad.svg" class="select bad"
+        /></a>
+        <div class="btn-detail">
+          <a (click)="onShowDetails(i)"> View More</a>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <div class="btn">
+    <a routerLink="/student" role="button"
+      ><img src="assets/plus.svg" /> Add Student</a
+    >
+  </div>
+</div>
