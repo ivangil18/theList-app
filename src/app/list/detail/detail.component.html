@@ -2,21 +2,27 @@
   <h1>Student Datails:</h1>
   <div class="list">
     <article>
-      <div class="avatar" [ngStyle]="{ 'background-color': studentData.avatar }">
+      <div
+        class="avatar"
+        [ngStyle]="{ 'background-color': studentData.avatar }"
+      >
         <p>CP</p>
       </div>
       <div class="atendance">
-        <p class="present"><span>Present: </span>{{studentData.presents}}</p>
-        <p class="absent"><span>Absent: </span>{{studentData.absenses}}</p>
+        <p class="present"><span>Present: </span>{{ studentData.presents }}</p>
+        <p class="absent"><span>Absent: </span>{{ studentData.absenses }}</p>
       </div>
       <div class="data">
-        <h3>{{studentData.name}}</h3>
-        <p><span>Class:</span> {{studentData.group}}</p>
+        <h3>{{ studentData.name }} {{ studentData.lastName }}</h3>
+        <p><span>Class:</span> {{ studentData.group }}</p>
         <p><span> #:</span> 5</p>
-        <p><span>Email: </span>{{studentData.email}}</p>
-        <p id="major"><span>Major: </span>{{studentData.major}}</p>
-        <p><span>City: </span>{{studentData.city}}</p>
-        <p><span>Country: </span>{{studentData.country}}</p>
+        <p><span>Email: </span>{{ studentData.email }}</p>
+        <p id="major"><span>Major: </span>{{ studentData.major }}</p>
+        <p><span>City: </span>{{ studentData.city }}</p>
+        <p><span>Country: </span>{{ studentData.country }}</p>
+      </div>
+      <div class="edit" (click)="onStudentEdit(0)">
+        <img src="assets/pencil.svg" />
       </div>
     </article>
   </div>

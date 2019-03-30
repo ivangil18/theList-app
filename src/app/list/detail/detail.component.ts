@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Student } from 'src/app/shared/student.model';
 import { StudentDataService } from 'src/app/shared/student-data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-detail',
@@ -10,11 +11,16 @@ import { StudentDataService } from 'src/app/shared/student-data.service';
 export class DetailComponent implements OnInit {
   studentData: Student;
 
-  constructor(private studanteDataService: StudentDataService) {}
+  constructor(
+    private studanteDataService: StudentDataService,
+    private router: Router
+  ) {}
 
   ngOnInit() {
-    this.studanteDataService.studentSelected.subscribe(student => {
-      this.studentData = student;
-    });
+
+  }
+
+  onStudentEdit(id) {
+    this.router.navigate(['/student/edit/' + id]);
   }
 }

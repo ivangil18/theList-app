@@ -2,8 +2,8 @@
   <h1>Students List:</h1>
   <div class="list">
     <article *ngFor="let student of students; let i = index">
-      <div class="avatar" [ngStyle]="{ 'background-color': student.avatar }">
-        <p>{{ getinitials(student.name, student.lastName) }}</p>
+      <div class="avatar">
+        <p>{{ student.avatar }}</p>
       </div>
       <div class="data">
         <h3>{{ student.name }} {{ student.lastName }}</h3>

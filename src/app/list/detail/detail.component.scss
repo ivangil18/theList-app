@@ -9,19 +9,17 @@
     padding: 1.8rem;
     margin-bottom: 1.2em;
     display: grid;
-    grid-template-columns: 50px auto;
+    grid-template-columns: auto 100px;
     grid-template-rows: 70px auto;
     grid-template-areas:
       'avatar atendance'
-      'data data';
+      'data edit';
 
     .avatar {
       text-align: center;
       grid-area: avatar;
-      justify-self: center;
       width: 50px;
       height: 50px;
-      border: 1px solid blue;
       border-radius: 50px;
       margin: 2px 0;
 
@@ -36,24 +34,22 @@
 
     .atendance {
       grid-area: atendance;
-      justify-self: right;
-      p{
+      justify-self: center;
+      p {
         margin: 0;
         font-weight: bold;
       }
 
-      .present{
-        color:#069e15;
+      .present {
+        color: #069e15;
       }
-      .absent{
-        color:#f11010;
+      .absent {
+        color: #f11010;
       }
-
     }
 
     .data {
       grid-area: data;
-
 
       h3 {
         margin: 0 0 0.2rem;
@@ -64,9 +60,29 @@
         float: left;
         margin: 0 1.3rem 0 0;
 
-        span{
+        span {
           font-weight: bold;
         }
+      }
+    }
+    .edit {
+      grid-area: edit;
+      justify-self: center;
+      border: solid 2px #A8A3A3;
+      width: 30px;
+      height: 30px;
+      padding: .6rem;
+      border-radius: 30px;
+
+      img{
+        width: 20px;
+        margin: 0 .3rem;
+      }
+
+      &:hover{
+        border: solid 2px rgb(105, 103, 103);
+        cursor: pointer;
+        background-color: rgb(250, 237, 237)
       }
     }
   }

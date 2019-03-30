@@ -1,23 +1,39 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Output,
+  EventEmitter,
+  OnDestroy
+} from '@angular/core';
 import { StudentDataService } from 'src/app/shared/student-data.service';
 import { Student } from 'src/app/shared/student.model';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-item',
   templateUrl: './item.component.html',
   styleUrls: ['./item.component.scss']
 })
-export class ItemComponent implements OnInit {
-  @Output() showDatails = new EventEmitter<boolean>();
+export class ItemComponent implements OnInit, OnDestroy {
 
   backColor: string;
-
-  students: Student[];
+  studentsSub: Subscription;
+  students: Student[] = [];
 
   constructor(private studentDataService: StudentDataService) {}
 
   ngOnInit() {
-    this.students = this.studentDataService.getStudents();
+    this.studentDataService.getStudents();
+    this.studentsSub = this.studentDataService
+      .getStudentsChanges()
+      .subscribe(studentsD => {
+        this.students = [...studentsD];
+        console.log(this.students);
+      });
+  }
+
+  ngOnDestroy() {
+    this.studentsSub.unsubscribe();
   }
 
   getinitials(name: string, lastName: String) {
@@ -26,9 +42,7 @@ export class ItemComponent implements OnInit {
     return nameInitial + lastNameInitial;
   }
 
-  onShowDetails(index) {
-    this.studentDataService.getStudent(index);
-  }
+  onShowDetails(index) {}
 
   onPresent(id) {
     this.studentDataService.updateStudentPresent(id);

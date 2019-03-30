@@ -16,13 +16,15 @@
     </ng-template>
     <ng-template #pfalse>
       <p>No students registered yet...</p>
-      <div class="btn">
-        <a routerLink="/student" role="button"
-          ><img src="assets/plus.svg" /> Add Student</a
-        >
+      <div class="btn" (click)="checkConection()">
+        <a role="button"><img src="assets/plus.svg" /> Add Student</a>
       </div>
     </ng-template>
   </div>
 
   <img class="bigLogo" src="assets/bigLogo.svg" />
+
+  <div *ngFor="let student of students">
+    <p>{{ student.name}}</p>
+  </div>
 </div>

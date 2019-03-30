@@ -41,7 +41,9 @@ export class StudentComponent implements OnInit {
   }
 
   onSave() {
-    this.studentDataService.addStudent(this.studentForm.value);
+    console.log({ ...this.studentForm.value });
+
+    this.studentDataService.addStudent({ ...this.studentForm.value });
     this.router.navigate(['/list']);
     this.studentForm.reset();
   }

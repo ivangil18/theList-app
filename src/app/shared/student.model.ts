@@ -1,14 +1,14 @@
-export class Student {
-  constructor(
-    public name: String,
-    public lastName: String,
-    public group: String,
-    public major: String,
-    public city: String,
-    public country: String,
-    public email: String,
-    public avatar: string,
-    public presents: number,
-    public absenses: number
-  ) {}
+export interface Student {
+  _id: String;
+  name: String;
+  lastName: String;
+  group: String;
+  major: String;
+  city: String;
+  country: String;
+  email: String;
+  avatar: string;
+  presents: number;
+  absenses: number;
 }
+

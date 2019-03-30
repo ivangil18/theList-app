@@ -10,6 +10,7 @@ import { ListComponent } from './list/list.component';
 import { StudentComponent } from './student/student.component';
 import { ItemComponent } from './list/item/item.component';
 import { DetailComponent } from './list/detail/detail.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { DetailComponent } from './list/detail/detail.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
