@@ -1,9 +1,12 @@
 .data {
   margin: 0;
   width: 500px;
-
   border-radius: 5px;
   background-color: white;
+  position: absolute;
+  top: 16%;
+  left:30%;
+  translate: (-16%, -30%);
 
   header {
     background-color: rgb(17, 17, 104);
@@ -21,7 +24,7 @@
       font-size: 1.2rem;
     }
 
-    .buton {
+    .controls {
       margin-top: 0.5rem;
       text-align: right;
       font-family: 'Monserrat';

@@ -1,9 +1,13 @@
 header {
   background-color: white;
+  overflow: hidden;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
   a {
     img {
       width: 150px;
-      padding: .3rem 0;
+      padding: 0.3rem 0;
     }
   }
   nav {
@@ -28,17 +32,13 @@ header {
           }
 
           &.running {
-            color: #20D4D9;
+            color: #20d4d9;
           }
-
-
         }
       }
     }
-
   }
 }
-
 
 .one-edge-shadow {
   -webkit-box-shadow: 0 3px 1px 0px rgb(148, 146, 146);

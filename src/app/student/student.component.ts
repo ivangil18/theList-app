@@ -32,11 +32,7 @@ export class StudentComponent implements OnInit {
       group: new FormControl(),
       major: new FormControl(),
       city: new FormControl(),
-      country: new FormControl(),
-      email: new FormControl(),
-      avatar: new FormControl(this.backColor),
-      presents: new FormControl(0),
-      absenses: new FormControl(0)
+      country: new FormControl()
     });
   }
 
@@ -48,8 +44,5 @@ export class StudentComponent implements OnInit {
     this.studentForm.reset();
   }
 
-  getBackColor() {
-    this.backColor =
-      '#' + (0x1000000 + Math.random() * 0xffffff).toString(16).substr(1, 6);
-  }
+  getBackColor() {}
 }

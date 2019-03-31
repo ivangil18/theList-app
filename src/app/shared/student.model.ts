@@ -1,5 +1,5 @@
 export interface Student {
-  _id: String;
+  id: String;
   name: String;
   lastName: String;
   group: String;
@@ -7,7 +7,7 @@ export interface Student {
   city: String;
   country: String;
   email: String;
-  avatar: string;
+  avatar: {color: String, initials: String};
   presents: number;
   absenses: number;
 }

@@ -15,25 +15,46 @@ export class StudentDataService {
 
   addStudent(student) {
     this.http
-      .post<{ messge: string; student: Student }>(
+      .post<{ message: string; student: any }>(
         'http://localhost:3000/api/createStudent',
         student
       )
       .subscribe(resData => {
-        console.log(resData.student);
-        this.students.push(resData.student);
-        this.studentsChanged.next([...this.students]);
+        console.log(resData.message);
+        this.getStudents();
       });
   }
 
   getStudents() {
     this.http
-      .get<{ message: string; students: Student[] }>(
+      .get<{ message: string; students: any }>(
         'http://localhost:3000/api/students'
+      )
+      .pipe(
+        map(studentData => {
+          return studentData.students.map(student => {
+            return {
+              id: student._id,
+              name: student.name,
+              lastName: student.lastName,
+              group: student.group,
+              major: student.major,
+              city: student.city,
+              country: student.country,
+              email: student.email,
+              avatar: {
+                color: student.avatar.color,
+                initials: student.avatar.initials
+              },
+              presents: student.presents,
+              absents: student.absents
+            };
+          });
+        })
       )
       .subscribe(studentsData => {
         console.log(studentsData);
-        this.students = studentsData.students;
+        this.students = studentsData;
         this.studentsChanged.next([...this.students]);
       });
   }
@@ -54,4 +75,6 @@ export class StudentDataService {
   }
 
   countStudents() {}
+
+  private generateStudent(student: any) {}
 }

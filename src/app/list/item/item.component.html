@@ -1,9 +1,9 @@
-<div class="info">
+<div class="info" [@listAnimation]="students.length">
   <h1>Students List:</h1>
   <div class="list">
     <article *ngFor="let student of students; let i = index">
-      <div class="avatar">
-        <p>{{ student.avatar }}</p>
+      <div class="avatar" [ngStyle]="{ backgroundColor: student.avatar.color }">
+        <p>{{ student.avatar.initials }}</p>
       </div>
       <div class="data">
         <h3>{{ student.name }} {{ student.lastName }}</h3>
