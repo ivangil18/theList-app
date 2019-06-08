@@ -1,32 +1,27 @@
-<div class="info" [@listAnimation]="students.length">
-  <h1>Students List:</h1>
+<div class="info">
   <div class="list">
-    <article *ngFor="let student of students; let i = index">
+    <article>
       <div class="avatar" [ngStyle]="{ backgroundColor: student.avatar.color }">
         <p>{{ student.avatar.initials }}</p>
       </div>
       <div class="data">
         <h3>{{ student.name }} {{ student.lastName }}</h3>
         <p>Class: {{ student.group }}</p>
-        <p>#: {{ i + 1 }}</p>
+        <p>#: {{ 1 }}</p>
       </div>
       <div class="controls">
-        <a (click)="onPresent(i)"
+        <a (click)="onPresent(1)"
           ><img src="assets/good.svg" class="select good"
         /></a>
-        <a (click)="onAbsent(i)"
+        <a (click)="onAbsent(1)"
           ><img src="assets/bad.svg" class="select bad"
         /></a>
         <div class="btn-detail">
-          <a (click)="onShowDetails(i)"> View More</a>
+          <a (click)="onShowDetails(1)"> View More</a>
         </div>
       </div>
     </article>
   </div>
 
-  <div class="btn">
-    <a routerLink="/student" role="button"
-      ><img src="assets/plus.svg" /> Add Student</a
-    >
-  </div>
+
 </div>

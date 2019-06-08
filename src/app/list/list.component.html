@@ -1,4 +1,21 @@
-<app-item></app-item>
+<div class="info">
+  <h1>Students List:</h1>
+  <!-- <div *ngFor="let item of items">
+    <app-info [person]="item.name"></app-info>
+  </div> -->
+  <div [@listAnimation]="students.length">
+    <div *ngFor="let student of students">
+      <app-item [student]="student"></app-item>
+    </div>
+  </div>
+
+  <div class="btn">
+      <a routerLink="/student" role="button"
+        ><img src="assets/plus.svg" /> Add Student</a
+      >
+    </div>
+</div>
+
 
 <app-detail></app-detail>
 
